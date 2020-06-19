@@ -1,0 +1,37 @@
+<%- include ("./partials/navbar") %>
+<div class="container">
+  <h1 class="mt-4">Log(s) New Form</h1>
+  <p>
+    <code>*= required fields</code>
+  </p>
+  <%- include ("./partials/messages") %>
+  <form action="/logs/save" method="POST">
+    <fieldset>
+      <div class="form-group">
+        <label for="serviceDescription">Service description *</label>
+        <textarea 
+          class="form-control" 
+          id="serviceDescription" 
+          name="serviceDescription" 
+          rows="6" 
+          required><%= typeof serviceDescription != 'undefined' ? serviceDescription : '' %></textarea>
+      </div>
+      <fieldset class="form-group">
+        <div class="form-check">
+          <label class="form-check-label">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="conclusion"
+              name="conclusion"
+              <%= typeof conclusion != 'undefined' ? 'checked' : '' %>             
+            />
+            Concluded
+          </label>
+        </div>
+      </fieldset>
+      <button type="submit" class="btn btn-primary">Save</button>
+      <a href="/logs" class="btn btn-secondary">Cancel</a>
+    </fieldset>
+  </form>
+</div>

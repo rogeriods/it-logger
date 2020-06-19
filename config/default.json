@@ -1,0 +1,3 @@
+{
+  "mongoURI": "mongodb+srv://localhost:27017/itlogger?retryWrites=true"
+}

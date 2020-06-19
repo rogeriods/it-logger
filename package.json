@@ -1,0 +1,28 @@
+{
+  "name": "itlogger",
+  "version": "1.0.0",
+  "description": "IT Services Logger",
+  "main": "index.js",
+  "author": "Rogério Domingos",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "config": "^3.3.1",
+    "connect-flash": "^0.1.1",
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.0",
+    "express-session": "^1.17.1",
+    "moment": "^2.26.0",
+    "mongoose": "^5.9.19",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0"
+  }
+}

@@ -1,0 +1,55 @@
+<%- include ("./partials/navbar") %>
+<div class="container">
+  <h1 class="mt-4">Log(s) Update Form</h1>
+  <p>
+    <code>*= required fields</code>
+  </p>
+  <%- include ("./partials/messages") %>
+  <form action="/logs/update" method="POST">
+    <fieldset>
+      <div class="form-group">
+        <label>ID</label>
+        <input type="text" class="form-control" id="idLog" name="idLog" value="<%= log.id %>" readonly />
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Date creation</label>
+            <input class="form-control" type="text" value="<%= moment(log.dateCreation).format('MMMM Do YYYY, h:mm a') %>" readonly /> 
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Date conclusion</label>
+            <input class="form-control" type="text" value="<%= log.dateConclusion ? moment(log.dateConclusion).format('MMMM Do YYYY, h:mm a') : '' %>" readonly /> 
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="serviceDescription">Service description *</label>
+        <textarea 
+          class="form-control" 
+          id="serviceDescription" 
+          name="serviceDescription" 
+          rows="6" 
+          required><%= typeof log.serviceDescription != 'undefined' ? log.serviceDescription : '' %></textarea>
+      </div>
+      <fieldset class="form-group">
+        <div class="form-check">
+          <label class="form-check-label">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="conclusion"
+              name="conclusion"
+              <%= log.conclusion ? 'checked' : '' %>
+            />
+            Concluded
+          </label>
+        </div>
+      </fieldset>
+      <button type="submit" class="btn btn-primary">Save</button>
+      <a href="/logs" class="btn btn-secondary">Cancel</a>
+    </fieldset>
+  </form>
+</div>

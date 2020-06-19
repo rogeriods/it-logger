@@ -1,0 +1,41 @@
+<%- include ("./partials/navbar") %>
+<div class="container">
+  <h1 class="mt-4">Log(s) Delete Form</h1>
+  <div class="alert alert-primary mt-3 mb-3">
+    <strong>DELETE</strong> - Are you sure you want to delete this service log?
+  </div>
+  <%- include ("./partials/messages") %>
+  <form action="/logs/delete" method="POST">
+    <fieldset>
+      <div class="form-group">
+        <label><b>ID</b></label>
+        <input class="form-control-plaintext" type="text" id="idLog" name="idLog" readonly value="<%= log.id %>">
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label><b>Date creation</b></label>
+            <input class="form-control-plaintext" type="text" value="<%= moment(log.dateCreation).format('MMMM Do YYYY, h:mm a') %>" readonly /> 
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label><b>Date conclusion</b></label>
+            <input class="form-control-plaintext" type="text" value="<%= log.dateConclusion ? moment(log.dateConclusion).format('MMMM Do YYYY, h:mm a') : '' %>" readonly /> 
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label><b>Service description</b></label>
+        <textarea 
+          class="form-control-plaintext" 
+          id="serviceDescription" 
+          name="serviceDescription" 
+          rows="6" 
+          readonly><%= log.serviceDescription %></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Delete</button>
+      <a href="/logs" class="btn btn-secondary">Cancel</a>
+    </fieldset>
+  </form>
+</div>
