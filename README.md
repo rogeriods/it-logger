@@ -1,6 +1,21 @@
 # IT Logger
 
 This is a simple application to register your accomplishments using authentication.
+Remember this is a customized project from original developer Traversy Media.
+
+## Screnshots
+
+Login and Register
+
+![Alt text](resources/screen01.png)
+
+Grid
+
+![Alt text](resources/screen02.png)
+
+Form
+
+![Alt text](resources/screen03.png)
 
 ## Getting Started
 
